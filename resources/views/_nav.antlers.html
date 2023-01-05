@@ -1,0 +1,32 @@
+<nav style="background-color: black;" ; x-data="{searching: false}">
+    <div class="mx-auto px-3 py-3 flex items-center h-16" style="color:aliceblue">
+        <ul class = "mx-auto px-3 py-3 flex items-center h-16" style="color:aliceblue; font-family: 'Kalam'; font-size:large">
+            <li style="padding: 5%"><a href="/">Posts</a></li>
+            <li style="padding: 5%"><a href="/podcasts">Podcasts</a></li>
+            <li style="padding: 5%"><a href="/videos">Videos</a></li>
+        </ul>
+        <a href="/" class="flex hover:text-hot-pink" x-show="! searching" style="display: flex; justify-content: center; padding-top: 1.5%"><img src="/assets/mattman-blog-logo.png" width="30%" ></a>
+        <button class="hover:text-hot-pink transition-all duration-100 outline-none" @click="searching = true; $nextTick(() => { $refs.search.focus() })" aria-label="Search the site">
+            {{ svg src="search-{{ settings:personality }}" class="w-6 h-6" }}
+        </button>
+        <form action="/search" x-show="searching" x-cloak class="flex-1">
+            <input
+                name="q"
+                type="text"
+                class="w-full outline-none px-2 py-1 ml-3"
+                placeholder="Search for stuff"
+                x-on:blur="searching = false"
+                @keydown.enter="search"
+                @keydown.esc="searching = false"
+                x-show="searching"
+                x-ref="search"
+            />
+        </form>
+        {{ settings:social }}
+            <a href="{{ $url }}" class="ml-4" aria-label="{{ $name }}" rel="noopener">
+                {{ svg :src="icon" class="h-6 w-6 hover:text-hot-pink" }}
+            </a>
+        {{ /settings:social }}
+        
+    </div>
+    <div class="w-full border-b-2 border-black squiggle" style="padding: 1%"></div>

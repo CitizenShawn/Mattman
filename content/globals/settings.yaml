@@ -1,0 +1,22 @@
+title: Settings
+data:
+  site_name: "Mattman's Blog"
+  personality: casual
+  show_signup: true
+  social:
+    -
+      id: w7DClpNt
+      name: Instagram
+      url: instagram.com
+      icon: site/social-icons/instagram.svg
+    -
+      id: vSmvT3Kr
+      name: Email
+      url: 'mailto:jack@statamic.com'
+      icon: site/social-icons/email.svg
+    -
+      id: 2vVcLeb1
+      name: FAM.news
+      url: 'https://fam.news/mattman-podcast/'
+      icon: site/social-icons/thefamlogo.svg
+  icon: cutout-bear-copy-svg.svg

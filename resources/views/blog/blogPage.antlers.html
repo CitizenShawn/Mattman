@@ -3,7 +3,7 @@
     <header style="background-image: url('assets/gradient.png'); color: white; text-align: center; font-size: 400%; border-style: solid; border-color: white; border-width: medium">
         <h1 style="font-family: 'Bangers';"><b>THE LATEST FROM THE MATTCAVE!</b></h1>
     </header>
-    {{ collection from="blog|podcasts|videos" as="posts" paginate="12" sort="date:desc" }}
+    {{ collection:blog as="posts" paginate="12" sort="date:desc" }}
         <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 py-8">
             {{ posts }}
                 <div class="{{ $first ? 'md:col-span-2' : 'col-span-1' }}">
@@ -23,6 +23,6 @@
             </section>
             {{ /if }}
         {{ /paginate }}
-    {{ /collection }}
+    {{ /collection:blog }}
     <div style="color: white; background-image: url('/assets/gradient.png'); font-family: 'Kalam'; text-align: center; font-size: x-large;  border-style: solid; border-color: white; border-width: medium; padding: 2%">"I'm the Comfortable Caped Crusader, I fight the things that keep you up at night!  By the power of the pillow, the might of the mattress and the safety of the sheets, we have your Game Plan for Better Sleep™ so you can fall asleep faster, stay asleep longer, and get the good night's rest you deserve.  Sleep like a superhero so you can be awake like one and see what you are Cape-Able of!"</div>
 </article>
